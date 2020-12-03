@@ -1,28 +1,15 @@
-#!/bin/bash
-# JohnFordTV's VPN Premium Script
-# © Github.com/johndesu090
-# Official Repository: https://github.com/johndesu090/AutoScriptDB
-# For Updates, Suggestions, and Bug Reports, Join to my Messenger Groupchat(VPS Owners): https://m.me/join/AbbHxIHfrY9SmoBO
-# For Donations, Im accepting prepaid loads or GCash transactions:
-# Smart: 09206200840
-# Facebook: https://fb.me/johndesu090
-# Thanks for using this script, Enjoy Highspeed OpenVPN Service
 
-#############################
-#############################
-# Variables (Can be changed depends on your preferred values)
-# Script name
-MyScriptName='JohnFordTV-Premium Script'
+MyScriptName='HealerVPN'
 
 # OpenSSH Ports
 SSH_Port1='22'
-SSH_Port2='226'
+SSH_Port2='225'
 
 # Your SSH Banner
 SSH_Banner='https://raw.githubusercontent.com/johndesu090/AutoScriptDB/master/Files/Plugins/banner'
 
 # Dropbear Ports
-Dropbear_Port1='445'
+Dropbear_Port1='80'
 Dropbear_Port2='442'
 
 # Stunnel Ports
@@ -31,14 +18,14 @@ Stunnel_Port2='444' # through OpenSSH
 
 # OpenVPN Ports
 OpenVPN_TCP_Port='110'
-OpenVPN_UDP_Port='25222'
+OpenVPN_UDP_Port='53'
 
 # Privoxy Ports
 Privoxy_Port1='3356'
 Privoxy_Port2='8086'
 
 # Squid Ports
-Squid_Port1='3355'
+Squid_Port1='8484'
 Squid_Port2='8085'
 Squid_Port3='60000'
 
@@ -46,7 +33,7 @@ Squid_Port3='60000'
 OvpnDownload_Port='85' # Before changing this value, please read this document. It contains all unsafe ports for Google Chrome Browser, please read from line #23 to line #89: https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
 
 # Server local time
-MyVPS_Time='Asia/Manila'
+MyVPS_Time='Asia/Ho_Chi_Minh'
 #############################
 
 
@@ -157,7 +144,7 @@ MySSHConfig
  sed -i 's/use_authtok //g' /etc/pam.d/common-password
 
  # Some command to identify null shells when you tunnel through SSH or using Stunnel, it will fix user/pass authentication error on HTTP Injector, KPN Tunnel, eProxy, SVI, HTTP Proxy Injector etc ssh/ssl tunneling apps.
- sed -i '/\/bin\/false/d' /etc/shells
+ sed -i '/\/        bin\/false/d' /etc/shells
  sed -i '/\/usr\/sbin\/nologin/d' /etc/shells
  echo '/bin/false' >> /etc/shells
  echo '/usr/sbin/nologin' >> /etc/shells
